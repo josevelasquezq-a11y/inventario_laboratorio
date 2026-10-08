@@ -192,3 +192,8 @@ Verificar que el código siga respetando las reglas de este archivo.
 Revisar que las funcionalidades existentes continúen funcionando.
 
 Si el requerimiento no está suficientemente claro y realizar el cambio podría afectar la estructura, las dependencias o el almacenamiento del proyecto, solicitar aclaración antes de realizar modificaciones importantes.
+
+## Documentación
+
+- Todas las funciones deben incluir docstring.
+- El docstring debe describir brevemente el propósito de la función.
