@@ -4,194 +4,192 @@
 
 El proyecto debe desarrollarse utilizando Python.
 
-Todo el código, nombres de variables, funciones, comentarios y documentación interna deben respetar el idioma acordado para el proyecto.
+Todo el código generado debe ser compatible con Python.
+
+Los comentarios y explicaciones del código deben estar redactados en español.
 
 ## 2. Convenciones de nombres
 
-Utilizar exclusivamente la convención snake_case para:
+Utilizar exclusivamente la convención snake_case para variables, funciones, métodos y nombres de archivos Python.
 
-Variables.
+Los nombres de los datos de los equipos deben respetar las siguientes convenciones:
 
-Funciones.
+-id_equipo: código único del equipo.
 
-Métodos.
+-nombre: nombre del dispositivo.
 
-Archivos Python.
+-tipo_equipo: categoría del equipo.
 
-Identificadores relacionados con los datos.
+-estado: estado actual del equipo.
 
-Ejemplos:
+-ubicacion: lugar donde se encuentra el equipo dentro del laboratorio.
+
+Ejemplos correctos:
 
 id_equipo
-nombre_equipo
 tipo_equipo
 obtener_equipo()
 registrar_equipo()
 
-Evitar convenciones como:
+No utilizar nombres como:
 
 idEquipo
-nombreEquipo
-NombreEquipo
-
-Los nombres deben ser descriptivos y mantener consistencia en todo el proyecto.
-
-Los campos principales de un equipo son:
-
-id_equipo: identificador único del equipo.
-
-nombre: nombre del dispositivo.
-
-tipo_equipo: categoría del dispositivo.
-
-estado: estado actual del equipo.
-
-ubicacion: ubicación del equipo dentro del laboratorio.
-
+tipoEquipo
+ObtenerEquipo()
 
 ## 3. Organización del código
 
 Respetar la estructura existente del proyecto.
 
-No reorganizar archivos, carpetas, módulos o componentes que ya funcionen correctamente, salvo que el cambio sea estrictamente necesario.
+La aplicación debe mantener separadas las responsabilidades de cada módulo.
 
-Cada componente debe mantener una responsabilidad clara.
+La estructura esperada es:
 
-Evitar:
+inventario-laboratorio/
+├── README.md
+├── AGENTS.md
+├── app.py
+├── src/
+│   ├── inventario.py
+│   └── mantenimiento.py
+├── data/
+│   └── equipos.json
+└── evidencias/
+    └── validacion.md
 
-Duplicar código.
+app.py debe encargarse del inicio y coordinación de la aplicación.
 
-Crear funciones innecesarias.
+src/inventario.py debe contener la lógica relacionada con la gestión de los equipos.
 
-Colocar toda la lógica en un único archivo.
+src/mantenimiento.py debe contener la lógica relacionada con el mantenimiento de los equipos.
 
-Crear archivos o carpetas sin una justificación funcional.
+data/equipos.json debe utilizarse para el almacenamiento local de los equipos.
 
-Modificar componentes que no estén relacionados con el requerimiento solicitado.
-
-Antes de crear una nueva función, clase o módulo, comprobar si ya existe uno que pueda reutilizarse.
+No mezclar innecesariamente responsabilidades entre los módulos.
 
 ## 4. Funciones
 
-Las funciones deben tener una responsabilidad específica y utilizar nombres descriptivos en snake_case.
+Las funciones deben tener una responsabilidad clara y utilizar nombres descriptivos en snake_case.
 
-La aplicación debe permitir, según las funcionalidades implementadas:
+La aplicación debe permitir, según las funcionalidades definidas en el proyecto:
 
-Registrar equipos.
+-Registrar equipos.
 
-Consultar equipos.
+-Listar equipos.
 
-Modificar equipos.
+-Buscar equipos.
 
-Eliminar equipos.
+-Modificar el estado de un equipo.
 
-Buscar equipos.
+-Gestionar la información de los equipos.
 
-Filtrar equipos.
+-Gestionar el mantenimiento de los equipos.
 
-Cambiar el estado de un equipo.
-
-Gestionar las ubicaciones.
-
-Validar los datos ingresados.
-
-Guardar y recuperar la información.
-
-No crear funciones duplicadas cuando ya exista una función que cumpla la misma finalidad.
+Evitar duplicar funciones o implementar nuevamente una funcionalidad que ya exista.
 
 ## 5. Datos
 
-Las funciones deben tener una responsabilidad específica y utilizar nombres descriptivos en snake_case.
+El almacenamiento de los equipos debe realizarse localmente mediante un archivo JSON.
 
-La aplicación debe permitir, según las funcionalidades implementadas:
+El archivo definido para el almacenamiento es:
 
-Registrar equipos.
+data/equipos.json
 
-Consultar equipos.
+Cada equipo debe contener como mínimo:
 
-Modificar equipos.
+id_equipo
+nombre
+tipo_equipo
+estado
+ubicacion
 
-Eliminar equipos.
+No cambiar JSON por otro sistema de almacenamiento sin autorización explícita.
 
-Buscar equipos.
+No crear sistemas de almacenamiento alternativos.
 
-Filtrar equipos.
+La información debe conservarse correctamente entre ejecuciones del programa.
 
-Cambiar el estado de un equipo.
-
-Gestionar las ubicaciones.
-
-Validar los datos ingresados.
-
-Guardar y recuperar la información.
-
-No crear funciones duplicadas cuando ya exista una función que cumpla la misma finalidad.
+El código debe manejar adecuadamente los casos en los que el archivo JSON no exista, esté vacío o contenga información inválida.
 
 ## 6. Restricciones
 
-No utilizar librerías externas que no hayan sido autorizadas para el proyecto.
+La IA debe cumplir las siguientes restricciones:
 
-Antes de incorporar una nueva librería:
+Utilizar Python.
 
-Comprobar si la funcionalidad puede implementarse utilizando las librerías ya disponibles.
+Utilizar snake_case.
 
-Si no es posible, solicitar autorización para incorporar una nueva dependencia.
+Mantener el almacenamiento local en data/equipos.json.
 
-No instalar ni importar automáticamente librerías no autorizadas.
+No utilizar librerías no autorizadas.
 
-No reemplazar una librería existente por otra sin autorización.
+No utilizar librerías desactualizadas.
+
+No proponer arquitecturas web.
+
+No crear conexiones externas.
+
+No modificar innecesariamente la estructura del proyecto.
+
+No crear funcionalidades que no hayan sido solicitadas.
+
+No utilizar marcadores de posición en el código final.
+
+No dejar funciones incompletas.
+
+No omitir el manejo de errores.
 
 ## 7. Modificación del código
 
-Cuando se solicite modificar el proyecto:
+Cuando se solicite modificar el código:
 
-Analizar primero el código existente.
+- Analizar primero el código existente.
 
-Identificar exactamente qué parte debe modificarse.
+- Identificar los archivos relacionados con el cambio.
 
-Reutilizar las funciones y componentes existentes cuando sea posible.
+- Reutilizar las funciones existentes cuando sea posible.
 
-Modificar únicamente lo necesario para cumplir el requerimiento.
+- Modificar únicamente lo necesario.
 
-Mantener intactas las funcionalidades que no estén relacionadas con el cambio.
+- Mantener las funcionalidades existentes que no estén relacionadas con el cambio.
 
-Mantener la estructura actual del proyecto.
+- Respetar la estructura actual del proyecto.
 
-Mantener las convenciones de nombres existentes.
+- Respetar las convenciones de nombres.
 
-No incorporar librerías no autorizadas.
+- Respetar el almacenamiento en data/equipos.json.
 
-No cambiar el sistema de almacenamiento.
+- No incorporar librerías no autorizadas.
 
-Comprobar que el cambio no introduzca errores en funcionalidades existentes.
+- Verificar que el código modificado sea compatible con Python.
 
-La prioridad es realizar el cambio mínimo necesario, manteniendo la estabilidad y coherencia del proyecto.
+- Verificar que no se hayan introducido errores.
+
+- Entregar código completo y funcional para la parte modificada.
 
 ## 8. Procedimiento antes de realizar cambios
 
-Antes de modificar cualquier archivo, la IA debe:
+Antes de generar o modificar código, la IA debe:
 
-Analizar la estructura actual del proyecto.
+- Leer y analizar AGENTS.md.
 
-Revisar los archivos relacionados con el requerimiento.
+- Revisar la estructura actual del proyecto.
 
-Identificar las funciones y componentes existentes que puedan reutilizarse.
+- Revisar los archivos relacionados con la tarea.
 
-Comprobar las dependencias utilizadas.
+- Identificar las funciones y componentes existentes que puedan reutilizarse.
 
-Verificar el sistema de almacenamiento existente.
+- Determinar qué archivos necesitan ser modificados.
 
-Determinar qué archivos necesitan realmente ser modificados.
+- Evitar modificaciones innecesarias.
 
-Evitar modificaciones innecesarias.
+- Mantener el almacenamiento local definido.
 
-Realizar únicamente los cambios solicitados.
+- Mantener las dependencias autorizadas.
 
-Verificar que el código siga respetando las reglas de este archivo.
+- Generar únicamente los cambios necesarios.
 
-Revisar que las funcionalidades existentes continúen funcionando.
-
-Si el requerimiento no está suficientemente claro y realizar el cambio podría afectar la estructura, las dependencias o el almacenamiento del proyecto, solicitar aclaración antes de realizar modificaciones importantes.
+- Validar el código generado antes de considerarlo terminado.
 
 ## Documentación
 
