@@ -23,28 +23,37 @@ Administradores del laboratorio
 
 Cada equipo contiene:
 
--codigo
--nombre
--tipo
--estado
--ubicacion
+- `id_equipo`: código único del equipo.
+- `nombre`: nombre del dispositivo.
+- `tipo_equipo`: categoría del equipo.
+- `estado`: estado actual del equipo.
+- `ubicacion`: lugar donde se encuentra dentro del laboratorio.
 
 ## 6. Tecnologías
 
 Lenguaje:Python
 
-Almacenamiento: GitHub
+Almacenamiento: La información de los equipos se almacenará localmente en formato JSON.
+
+El archivo de almacenamiento será:
+
+`data/equipos.json`
 
 ## 7. Estructura del proyecto
 
-1. Crear un repositorio en Github. 
+El proyecto deberá mantener la siguiente estructura:
 
-2. En Visual Studio Code escribir dos archivos llamados README.md y AGENTS.md, ambos servirán para estructurar el proyecto y darle instrucciones a la IA al momento de generar código.
-
-3. Se usará Google Antigravity para la generación de código.
-
-4. Se validará el código.
-
+inventario-laboratorio/
+├── README.md
+├── AGENTS.md
+├── app.py
+├── src/
+│   ├── inventario.py
+│   └── mantenimiento.py
+├── data/
+│   └── equipos.json
+└── evidencias/
+    └── validacion.md
 
 ## 8. Ejecución
 
