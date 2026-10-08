@@ -195,3 +195,4 @@ Antes de generar o modificar código, la IA debe:
 
 - Todas las funciones deben incluir docstring.
 - El docstring debe describir brevemente el propósito de la función.
+
