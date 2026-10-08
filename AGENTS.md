@@ -2,181 +2,193 @@
 
 ## 1. Lenguaje
 
-Python
+El proyecto debe desarrollarse utilizando Python.
+
+Todo el código, nombres de variables, funciones, comentarios y documentación interna deben respetar el idioma acordado para el proyecto.
 
 ## 2. Convenciones de nombres
 
-Id_equipo: código del equipo
-nombre: nombre del dispositivo 
-tipo­_equipo: categoría del equipo
-estado: estatus actual del equipo
-ubicacion: en que parte del laboratorio se encuentra
+Utilizar exclusivamente la convención snake_case para:
+
+Variables.
+
+Funciones.
+
+Métodos.
+
+Archivos Python.
+
+Identificadores relacionados con los datos.
+
+Ejemplos:
+
+id_equipo
+nombre_equipo
+tipo_equipo
+obtener_equipo()
+registrar_equipo()
+
+Evitar convenciones como:
+
+idEquipo
+nombreEquipo
+NombreEquipo
+
+Los nombres deben ser descriptivos y mantener consistencia en todo el proyecto.
+
+Los campos principales de un equipo son:
+
+id_equipo: identificador único del equipo.
+
+nombre: nombre del dispositivo.
+
+tipo_equipo: categoría del dispositivo.
+
+estado: estado actual del equipo.
+
+ubicacion: ubicación del equipo dentro del laboratorio.
 
 
 ## 3. Organización del código
 
-El código debe estar organizado de forma modular y clara.
+Respetar la estructura existente del proyecto.
 
-Separar las diferentes responsabilidades de la aplicación en módulos o funciones independientes cuando sea necesario.
+No reorganizar archivos, carpetas, módulos o componentes que ya funcionen correctamente, salvo que el cambio sea estrictamente necesario.
 
-La aplicación debe separar, como mínimo, las siguientes responsabilidades:
+Cada componente debe mantener una responsabilidad clara.
 
-Gestión de equipos.
+Evitar:
 
-Registro y modificación de información.
+Duplicar código.
 
-Búsqueda y filtrado de equipos.
+Crear funciones innecesarias.
 
-Gestión de estados.
+Colocar toda la lógica en un único archivo.
 
-Gestión de ubicaciones.
+Crear archivos o carpetas sin una justificación funcional.
 
-Validación de datos.
+Modificar componentes que no estén relacionados con el requerimiento solicitado.
 
-Almacenamiento y recuperación de información.
-
-Interfaz gráfica.
-
-Generación de reportes, si corresponde.
-
-Evitar colocar toda la lógica de la aplicación en un único archivo o en una única función.
-
-Cada función debe tener una responsabilidad específica y evitar código duplicado.
+Antes de crear una nueva función, clase o módulo, comprobar si ya existe uno que pueda reutilizarse.
 
 ## 4. Funciones
 
-Las funciones deben tener nombres descriptivos y realizar una única tarea principal.
+Las funciones deben tener una responsabilidad específica y utilizar nombres descriptivos en snake_case.
 
-Como mínimo, la aplicación debe permitir:
+La aplicación debe permitir, según las funcionalidades implementadas:
 
-Registrar un nuevo equipo.
+Registrar equipos.
 
-Consultar la información de un equipo.
+Consultar equipos.
 
-Modificar los datos de un equipo.
+Modificar equipos.
 
-Eliminar un equipo cuando corresponda.
+Eliminar equipos.
 
-Buscar equipos por ID, nombre, tipo, estado o ubicación.
+Buscar equipos.
 
-Filtrar equipos según diferentes criterios.
+Filtrar equipos.
 
 Cambiar el estado de un equipo.
 
-Consultar la cantidad de equipos registrados.
+Gestionar las ubicaciones.
 
-Mostrar los equipos disponibles, en uso, en mantenimiento o fuera de servicio.
+Validar los datos ingresados.
 
-Validar los datos antes de guardarlos.
+Guardar y recuperar la información.
 
-Guardar y cargar la información de manera persistente.
-
-Las funciones deben devolver resultados claros y manejar adecuadamente los errores.
+No crear funciones duplicadas cuando ya exista una función que cumpla la misma finalidad.
 
 ## 5. Datos
 
-Cada equipo debe contener como mínimo los siguientes datos:
+Las funciones deben tener una responsabilidad específica y utilizar nombres descriptivos en snake_case.
 
-Id_equipo
+La aplicación debe permitir, según las funcionalidades implementadas:
 
-nombre
+Registrar equipos.
 
-tipo_equipo
+Consultar equipos.
 
-estado
+Modificar equipos.
 
-ubicacion
+Eliminar equipos.
 
-El Id_equipo debe ser único y no debe existir más de un equipo con el mismo identificador.
+Buscar equipos.
 
-Los campos obligatorios deben validarse antes de registrar o modificar un equipo.
+Filtrar equipos.
 
-Los estados permitidos deben estar definidos previamente y no deben depender de texto introducido libremente por el usuario.
+Cambiar el estado de un equipo.
 
-Ejemplo de estados:
+Gestionar las ubicaciones.
 
-Disponible
+Validar los datos ingresados.
 
-En uso
+Guardar y recuperar la información.
 
-En mantenimiento
-
-Fuera de servicio
-
-Los tipos de equipo y las ubicaciones también deben manejarse de forma consistente.
-
-La información debe conservarse aunque la aplicación sea cerrada y posteriormente ejecutada nuevamente.
+No crear funciones duplicadas cuando ya exista una función que cumpla la misma finalidad.
 
 ## 6. Restricciones
 
-No modificar funcionalidades existentes sin una razón justificada.
+No utilizar librerías externas que no hayan sido autorizadas para el proyecto.
 
-No eliminar código funcional para solucionar un problema sin analizar previamente sus consecuencias.
+Antes de incorporar una nueva librería:
 
-No cambiar los nombres de variables, funciones, archivos o estructuras de datos existentes innecesariamente.
+Comprobar si la funcionalidad puede implementarse utilizando las librerías ya disponibles.
 
-No crear datos ficticios o valores predeterminados que no hayan sido solicitados.
+Si no es posible, solicitar autorización para incorporar una nueva dependencia.
 
-No duplicar funciones o lógica que ya exista en el proyecto.
+No instalar ni importar automáticamente librerías no autorizadas.
 
-No introducir librerías externas sin justificar previamente su necesidad.
-
-El código debe ser compatible con Python y utilizar buenas prácticas de programación.
-
-Los datos ingresados por el usuario deben validarse antes de ser procesados o almacenados.
-
-La aplicación debe manejar errores de manera controlada y mostrar mensajes comprensibles al usuario.
-
-No ocultar errores mediante excepciones vacías como except: pass.
+No reemplazar una librería existente por otra sin autorización.
 
 ## 7. Modificación del código
 
-Cuando se solicite modificar el código existente:
+Cuando se solicite modificar el proyecto:
 
-Analizar primero el código actual.
+Analizar primero el código existente.
 
-Identificar qué parte debe modificarse.
+Identificar exactamente qué parte debe modificarse.
 
-Mantener intactas las funcionalidades que no estén relacionadas con el cambio solicitado.
+Reutilizar las funciones y componentes existentes cuando sea posible.
 
-Realizar la menor cantidad de modificaciones necesarias.
+Modificar únicamente lo necesario para cumplir el requerimiento.
 
-Evitar reescribir completamente el proyecto si no es necesario.
+Mantener intactas las funcionalidades que no estén relacionadas con el cambio.
 
-Mantener las convenciones de nombres y la estructura existente.
+Mantener la estructura actual del proyecto.
 
-Verificar que el cambio no rompa funcionalidades previamente implementadas.
+Mantener las convenciones de nombres existentes.
 
-Entregar el código completo actualizado cuando sea necesario para facilitar su implementación.
+No incorporar librerías no autorizadas.
 
-Explicar brevemente qué partes fueron modificadas y por qué.
+No cambiar el sistema de almacenamiento.
 
-Si existe una ambigüedad en el requerimiento, no asumir una solución que pueda afectar la arquitectura del proyecto. Solicitar aclaración antes de realizar cambios importantes.
+Comprobar que el cambio no introduzca errores en funcionalidades existentes.
+
+La prioridad es realizar el cambio mínimo necesario, manteniendo la estabilidad y coherencia del proyecto.
 
 ## 8. Procedimiento antes de realizar cambios
 
-Antes de modificar cualquier código, la IA debe:
+Antes de modificar cualquier archivo, la IA debe:
 
-Leer y analizar el código existente.
+Analizar la estructura actual del proyecto.
 
-Identificar la estructura del proyecto.
+Revisar los archivos relacionados con el requerimiento.
 
-Identificar las funciones, variables y módulos relacionados con el cambio.
+Identificar las funciones y componentes existentes que puedan reutilizarse.
 
-Determinar qué funcionalidades podrían verse afectadas.
+Comprobar las dependencias utilizadas.
 
-Verificar si ya existe una función o componente que pueda reutilizarse.
+Verificar el sistema de almacenamiento existente.
 
-Evitar crear soluciones duplicadas.
+Determinar qué archivos necesitan realmente ser modificados.
 
-Proponer la modificación cuando esta pueda afectar significativamente la estructura del proyecto.
+Evitar modificaciones innecesarias.
 
-Realizar únicamente los cambios necesarios para cumplir el requerimiento.
+Realizar únicamente los cambios solicitados.
 
-Revisar el código modificado para detectar errores de sintaxis, lógica o compatibilidad.
+Verificar que el código siga respetando las reglas de este archivo.
 
-Mantener las funcionalidades existentes que no formen parte del cambio solicitado.
+Revisar que las funcionalidades existentes continúen funcionando.
 
-La IA debe priorizar la estabilidad, claridad, mantenibilidad y consistencia del proyecto sobre la cantidad de código generado.
-
-Cuando se solicite una nueva funcionalidad, primero debe integrarla con la arquitectura existente en lugar de crear una implementación independiente.
+Si el requerimiento no está suficientemente claro y realizar el cambio podría afectar la estructura, las dependencias o el almacenamiento del proyecto, solicitar aclaración antes de realizar modificaciones importantes.
