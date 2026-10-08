@@ -1,1 +1,9 @@
-[]
+[
+    {
+        "id_equipo": "PC001",
+        "nombre": "Computadora",
+        "tipo_equipo": "PC",
+        "estado": "En uso",
+        "ubicacion": "Mesa 1"
+    }
+]

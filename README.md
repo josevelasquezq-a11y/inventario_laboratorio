@@ -43,7 +43,7 @@ El archivo de almacenamiento será:
 
 El proyecto deberá mantener la siguiente estructura:
 
-inventario-laboratorio/
+inventario_laboratorio/
 ├── README.md
 ├── AGENTS.md
 ├── app.py
